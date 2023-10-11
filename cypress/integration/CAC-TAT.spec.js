@@ -6,7 +6,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('verifica o título da aplicação', function() {
-        cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
+        cy.title().should('be.equal', 'Central de Atendimento ao Cliente TATT')
     })
 
     it('preenche os campos obrigatórios e envia o formulário', function() {
@@ -17,6 +17,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
         cy.get('#open-text-area').type(longText, {delay : 0})
         cy.get('button[type="submit"]').click()
         cy.get('.success').should('be.visible')
+        cy.get('.success').should('not.be.visible')
     })
     
   })
